@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: azure/setup-kubectl@v4
         with:
-          version: default
+          version: v1.33.0
         id: install
       - name: Validate yaml file
         run: kubectl apply --dry-run -f ../../nginx-deployment.yaml
