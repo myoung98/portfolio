@@ -15,6 +15,4 @@ jobs:
           version: v1.33.0
         id: install
       - name: Validate yaml file
-        env:
-          MY_PATH: ./
-        run: echo "$MY_PATH"
+        run: ls
