@@ -15,4 +15,4 @@ jobs:
           version: v1.33.0
         id: install
       - name: Validate yaml file
-        run: ls
+        run: kubectl apply --dry-run -f nginx-deployment.yaml
