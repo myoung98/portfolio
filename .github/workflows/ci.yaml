@@ -20,8 +20,8 @@ jobs:
           chmod +x ./kind
           sudo mv ./kind /usr/local/bin/kind
       - name: Create temporary Kind cluster
-        run: |
-          kind create cluster --name ci-cluster
+        run: kind create cluster --name ci-cluster
       - name: Validate nginx deployment
-        run: |
-          kubectl apply --dry-run -f nginx-deployment.yaml
+        run: kubectl apply --dry-run -f nginx-deployment.yaml
+      - name: Delete temp cluster
+        run: kind delete cluster --name ci-cluster
